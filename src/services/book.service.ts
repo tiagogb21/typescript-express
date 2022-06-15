@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
+import { NotFoundError } from 'restify-errors';
 import connection from '../models/connection';
 import BookModel from '../models/book.model';
 import Book from '../interfaces/book.interface';
@@ -23,6 +24,15 @@ class BookService {
 
   public create(book: Book): Promise<Book> {
     return this.model.create(book);
+  }
+
+  public async update(id: number, book: Book): Promise<void> {
+    const bookFound = await this.model.getById(id);
+    if (!bookFound) {
+      throw new NotFoundError('NotFoundError');
+    }
+
+    return this.model.update(id, book);
   }
 }
 

@@ -1,5 +1,5 @@
+/* eslint-disable import/no-unresolved */
 import { Pool, ResultSetHeader } from 'mysql2/promise';
-// eslint-disable-next-line import/no-unresolved
 import Book from '../interfaces/book.interface';
 
 export default class BookModel {

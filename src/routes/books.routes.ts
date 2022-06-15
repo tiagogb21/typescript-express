@@ -10,5 +10,6 @@ const booksController = new BooksController();
 routerBook.get('/books', booksController.getAll);
 routerBook.get('/books/:id', booksController.getById);
 routerBook.post('/books/', validationBook, booksController.create);
+routerBook.put('/books/:id', validationBook, booksController.update);
 
 export default routerBook;
