@@ -7,9 +7,12 @@ const routerBook = Router();
 
 const booksController = new BooksController();
 
+const booksSlashId = '/books/:id';
+
 routerBook.get('/books', booksController.getAll);
-routerBook.get('/books/:id', booksController.getById);
+routerBook.get(booksSlashId, booksController.getById);
 routerBook.post('/books/', validationBook, booksController.create);
-routerBook.put('/books/:id', validationBook, booksController.update);
+routerBook.put(booksSlashId, validationBook, booksController.update);
+routerBook.delete(booksSlashId, booksController.remove);
 
 export default routerBook;
