@@ -3,6 +3,7 @@ import express from 'express';
 // eslint-disable-next-line import/no-unresolved
 import error from './src/middlewares/error.middleware';
 
+// eslint-disable-next-line import/no-unresolved
 import BooksRoutes from './src/routes/books.routes';
 
 const app = express();
