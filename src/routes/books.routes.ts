@@ -1,5 +1,11 @@
+/* eslint-disable import/no-unresolved */
 import { Router } from 'express';
+import BooksController from '../controllers/book.controller';
 
-const router = Router();
+const routerBook = Router();
 
-export default router;
+const booksController = new BooksController();
+
+routerBook.get('/books', booksController.getAll);
+
+export default routerBook;
