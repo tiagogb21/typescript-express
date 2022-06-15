@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 import connection from '../models/connection';
-import BookModel from '../models/book.models';
+import BookModel from '../models/book.model';
 import Book from '../interfaces/book.interface';
 
 class BookService {
@@ -14,6 +14,11 @@ class BookService {
   public async getAll(): Promise<Book[]> {
     const books = await this.model.getAll();
     return books;
+  }
+
+  public async getById(id: number): Promise<Book> {
+    const book = await this.model.getById(id);
+    return book;
   }
 }
 
