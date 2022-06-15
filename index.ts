@@ -1,16 +1,17 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
 
+// eslint-disable-next-line import/no-unresolved
+import error from './src/middlewares/error.middleware';
+
 const app = express();
 
 app.use(express.json());
 
+app.use(error);
+
 const PORT = 8000;
 
-app.get('/', (req, res) => {
-  res.status(StatusCodes.OK).send('Express + TypeScript');
-});
-
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running at port ${PORT}`);
 });
