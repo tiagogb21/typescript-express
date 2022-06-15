@@ -12,6 +12,18 @@ class BooksController {
     const books = await this.bookService.getAll();
     res.status(StatusCodes.OK).json(books);
   };
+
+  public getById = async (req: Request, res: Response) => {
+    const id = parseInt(req.params.id, 10);
+    const book = await this.bookService.getById(id);
+
+    if (!book) {
+      return res.status(StatusCodes.NOT_FOUND)
+        .json({ message: 'Book not found!' });
+    }
+
+    return res.status(StatusCodes.OK).json(book);
+  };
 }
 
 export default BooksController;
