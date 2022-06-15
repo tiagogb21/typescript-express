@@ -1,14 +1,11 @@
 import
-express,
 {
   NextFunction,
   Request,
   Response,
 } from 'express';
 
-const app = express();
-
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+const error = (err: Error, req: Request, res: Response, next: NextFunction) => {
   const { name, message, details } = err as any;
   console.log(`name: ${name}`);
 
@@ -28,4 +25,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 
   next();
-});
+};
+
+export default error;
