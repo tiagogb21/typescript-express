@@ -1,5 +1,5 @@
+/* eslint-disable import/no-unresolved */
 import { Pool, ResultSetHeader } from 'mysql2/promise';
-// eslint-disable-next-line import/no-unresolved
 import Book from '../interfaces/book.interface';
 
 export default class BookModel {
@@ -35,5 +35,22 @@ export default class BookModel {
     const [rows] = result;
     const [book] = rows as Book[];
     return book;
+  }
+
+  public async update(id: number, book: Book) {
+    const {
+      title, price, author, isbn,
+    } = book;
+    await this.connection.execute(
+      'UPDATE books SET title=?, price=?, author=?, isbn=? WHERE id=?',
+      [title, price, author, isbn, id],
+    );
+  }
+
+  public async remove(id: number) {
+    await this.connection.execute(
+      'DELETE FROM books WHERE id=?',
+      [id],
+    );
   }
 }
