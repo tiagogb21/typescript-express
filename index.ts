@@ -1,5 +1,4 @@
 import express from 'express';
-import { StatusCodes } from 'http-status-codes';
 
 // eslint-disable-next-line import/no-unresolved
 import error from './src/middlewares/error.middleware';
