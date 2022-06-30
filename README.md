@@ -1,22 +1,21 @@
 # trybesmith
+
 # Typescript and Express.js
 
-An Express.js project implemented using Typescript with strongly typed objects:
+Um projeto Express.js criado utilizando Typescript com poo:
 
-Installation Clone the repository
+Para instalar: Clone o repositório:
 
 npm install
 
-For development: npm run dev
+Para desenvolver: npm run dev
 
-To start: npm run dev
+Para começar: npm run dev
 
-Browse to http://localhost:3000
+Endereço: http://localhost:3000
 
-Docker Build the image sudo docker build -t rjmacarthy/express-typescript-starter .
+Para fazer o Docker Build da imagem: sudo docker build -t rjmacarthy/express-typescript-starter .
 
-Run the image docker-compose up
+Para rodar a imagem: docker-compose up
 
-Open http://localhost:3000
-
-License MITs
+Licença: MITs
