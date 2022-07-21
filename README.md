@@ -1,6 +1,8 @@
 # trybesmith
 
-# Typescript and Express.js
+# unindo Typescript e Express.js
+
+Criando um CRUD
 
 Um projeto Express.js criado utilizando Typescript com poo:
 
